@@ -13,7 +13,7 @@ void FillArray(double[] array)
 
 double SumMinMax(double[] array)
 {
-    double sum = 0;
+    double res = 0;
     double min = array[0];
     double max = array[0];
     for (int i = 0; i < array.Length; i++)
@@ -23,8 +23,8 @@ double SumMinMax(double[] array)
         else if (max < array[i])
             max = array[i];
     }
-    sum = Math.Round(min + max, 2);
-    return sum;
+    res = Math.Round(max - min, 2);
+    return res;
 }
 
 Console.Clear();
@@ -35,4 +35,4 @@ FillArray(array);
 Console.WriteLine($"Массив случайных вещественных чисел: {string.Join("; ", array)}");
 
 double res = SumMinMax(array);
-Console.WriteLine($"Сумма минимального и максимального элемента = {res}");
+Console.WriteLine($"Разница между максимальным и минимальным элементом = {res}");
